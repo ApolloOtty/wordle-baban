@@ -1,0 +1,391 @@
+body{
+  background-color: #0F172A;
+}
+
+
+
+.keyboard-button{
+  width: 2.5vw;
+  background-color: #475569;
+  margin: 0.05vw;
+  height: 3.5vw;
+  border-radius: 6px;
+  border: #000;
+  color: white;
+  font-weight: 600;
+}
+
+.keyboard-button.green{
+  width: 2.5vw;
+  background-color: #22C55E;
+  transition: background-color 0s 1.5s;
+  margin: 0.05vw;
+  height: 3.5vw;
+  border-radius: 6px;
+  border: #000;
+  color: white;
+  font-weight: 600;
+}
+
+.keyboard-button.yellow{
+width: 2.5vw;
+background-color: #EAB308;
+transition: background-color 0s 1.5s;
+margin: 0.05vw;
+height: 3.5vw;
+border-radius: 6px;
+border: #000;
+color: white;
+font-weight: 600;
+}
+
+.keyboard-button.grey{
+width: 2.5vw;
+background-color: #1E293B;
+transition: background-color 0s 1.5s;
+margin: 0.05vw;
+height: 3.5vw;
+border-radius: 6px;
+border: #000;
+color: white;
+font-weight: 600;
+}
+
+.keyboard-button.enter_delete{
+  width: 4.5vw;
+  height: 3vw;
+}
+
+.matrix {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1vw;
+}
+
+.row {
+  display: flex;
+}
+
+.square {
+  width: 3vw;
+  height: 3vw;
+  border: 2px solid #475569;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  background-color: transparent; /* Default background color */
+  border-radius: 4px;
+  
+}
+
+.square.correct {
+  background-color: #22C55E;
+  transition: background-color 0s 0.4s;}
+
+.square.exists {
+  background-color: #EAB308;
+  transition: background-color 0s 0.4s;
+}
+
+.square.grey {
+  background-color: #334155;
+  transition: background-color 0s 0.4s;}
+
+
+.square.exists-green {
+  background-color: green;
+}
+
+
+.matrix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vw;
+}
+
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 30%;
+  background-color: rgb(53, 53, 53);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: white;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.overlay.show {
+  opacity: 1;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buton_copy{
+  width: auto;
+  height: 20%;
+  background-color: rgb(112, 111, 111);
+  margin-top: 2%;
+  color: white;
+  border-radius: 6px;
+}
+
+
+@media (max-width: 860px) {
+  .overlay{
+    width: 80%;
+    height: 50%;
+  }
+  .matrix-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Align to the bottom of the container */
+    margin-top: 10vh; /* Set a height to the container to cover the entire viewport */
+  }
+  .keyboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Align to the bottom of the container */
+    height: 40vh; /* Set a height to the container to cover the entire viewport */
+  }
+  
+  .keyboard-button {
+    width: 2.5vw;
+    background-color: #475569;
+    margin: 0.05vw;
+    height: 3.5vw;
+    border-radius: 6px;
+    border: #000;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .keyboard-button {
+    width: 9.5vw;
+    height: 10.1vw;
+  }
+  .keyboard-button.yellow {
+    width: 9.5vw;
+    height: 10.1vw;
+  }
+  .keyboard-button.green {
+    width: 9.5vw;
+    height: 10.1vw;
+  }
+  .keyboard-button.grey {
+    width: 9.5vw;
+    height: 10.1vw;
+  }
+  .keyboard-button.enter_delete {
+    width: 13.6vw;
+    height: 10.1vw;
+  }
+  #keyboard {
+    display: flex;
+    align-items: normal;
+    justify-content: normal;
+  }
+  .square {
+    width: 10vw;
+    height: 10vw;
+    border: 2px solid #475569;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background-color: transparent; /* Default background color */
+    border-radius: 4px;
+  }
+}
+
+@media (min-width: 861px) and (max-width: 1024px) {
+  .keyboard-button {
+    width: 7vw;
+    height: 7vw;
+  }
+  .keyboard-button.yellow {
+    width: 7vw;
+    height: 7vw;
+  }
+  .keyboard-button.green {
+    width: 7vw;
+    height: 7vw;
+  }
+  .keyboard-button.grey {
+    width: 7vw;
+    height: 7vw;
+  }
+  .keyboard-button.enter_delete {
+    width: 9vw;
+    height: 7vw;
+  }
+  #keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .square {
+    width: 7vw;
+    height: 7vw;
+    font-size: 4vw;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .keyboard-button {
+    width: 3vw;
+    height: 3vw;
+  }
+  .keyboard-button.yellow {
+    width: 3vw;
+    height: 3vw;
+  }
+  .keyboard-button.green {
+    width: 3vw;
+    height: 3vw;
+  }
+  .keyboard-button.grey {
+    width: 3vw;
+    height: 3vw;
+  }
+  .keyboard-button.enter_delete {
+    width: 4.5vw;
+    height: 3vw;
+  }
+  #keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .square {
+    width: 3vw;
+    height: 3vw;
+    font-size: 2vw;
+    margin-right: 3px;
+    margin-bottom: 3px;
+  }
+}
+
+.square.expand {
+  animation: expand 0.5s;
+  transform-origin: center;
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.error-message {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background-color: rgb(214, 87, 87);
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 6px;
+}
+
+.error-message.show {
+  opacity: 1;
+}
+
+.win {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  background-color: rgb(54, 184, 54);
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 6px;
+}
+
+.win.show {
+  opacity: 1;
+}
+
+
+
+@keyframes backflip {
+  0% {
+    transform: perspective(800px) rotateX(0deg);
+  }
+  50% {
+    transform: perspective(800px) rotateX(90deg);
+  }
+  100% {
+    transform: perspective(800px) rotateX(0deg);
+  }
+}
+
+.square {
+  /* Existing styles for the square */
+  transition: background-color 0.3s ease;
+}
+
+.square.animate {
+  animation: backflip 0.8s ease;
+  transform-style: preserve-3d;
+
+
+}
+
+
+.square.has-letter {
+  border: 2px solid white;
+}
+
