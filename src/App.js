@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
         <Routes>
-          <Route path="https://apollootty.github.io/wordle-baban/" element={<Main/>} />
+          <Route path="/" element={<Main/>} />
         </Routes>
     </BrowserRouter>
   );
