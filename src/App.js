@@ -6,11 +6,11 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
       <HashRouter basename="/">
+        <Routes>
           <Route path="/" element={<Main/>} />
+        </Routes>
         </HashRouter>
-    </BrowserRouter>
   );
 }
 
