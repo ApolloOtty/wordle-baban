@@ -39,9 +39,14 @@ color: white;
 font-weight: 600;
 }
 
+.pierd{
+  margin-bottom: 2%;
+  margin-top: 1%;
+}
+
 .keyboard-button.grey{
 width: 2.5vw;
-background-color: #1E293B;
+background-color: #243046;
 transition: background-color 0s 1.5s;
 margin: 0.05vw;
 height: 3.5vw;
@@ -115,7 +120,7 @@ font-weight: 600;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30%;
-  height: 30%;
+  height: 40%;
   background-color: rgb(53, 53, 53);
   z-index: 9999;
   display: flex;
@@ -187,7 +192,7 @@ font-weight: 600;
     width: 2.5vw;
     background-color: #475569;
     margin: 0.05vw;
-    height: 3.5vw;
+    height: 4vw;
     border-radius: 6px;
     border: #000;
     color: white;
@@ -196,23 +201,20 @@ font-weight: 600;
   
   .keyboard-button {
     width: 9.5vw;
-    height: 10.1vw;
+    height: 15vw;
   }
   .keyboard-button.yellow {
     width: 9.5vw;
-    height: 10.1vw;
-  }
+    height: 15vw;  }
   .keyboard-button.green {
     width: 9.5vw;
-    height: 10.1vw;
-  }
+    height: 15vw;  }
   .keyboard-button.grey {
     width: 9.5vw;
-    height: 10.1vw;
-  }
+    height: 15vw;  }
   .keyboard-button.enter_delete {
     width: 13.6vw;
-    height: 10.1vw;
+    height: 15vw;
   }
   #keyboard {
     display: flex;
