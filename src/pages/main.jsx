@@ -109,6 +109,7 @@ const App = () => {
   const [currentColumn, setCurrentColumn] = useState(0);
  
   useEffect(() => {
+    localStorage.setItem('lastPlayDate', new Date().toDateString());
     const savedMatrix = localStorage.getItem('matrix');
     const savedColors = localStorage.getItem('colors');
     const firstRowColorSaved = localStorage.getItem('FirstRowColor');
