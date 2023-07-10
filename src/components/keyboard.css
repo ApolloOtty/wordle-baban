@@ -22,7 +22,6 @@ body{
   width: 2.5vw;
   background-color: #22C55E;
   transition: background-color 0s 1.5s;
-  margin: 0.2vw; 
    height: 3.5vw;
   border-radius: 6px;
   border: #000;
@@ -34,7 +33,6 @@ body{
 width: 2.5vw;
 background-color: #EAB308;
 transition: background-color 0s 1.5s;
-margin: 0.2vw;
 height: 3.5vw;
 border-radius: 6px;
 border: #000;
@@ -204,25 +202,25 @@ font-weight: 600;
   }
   
   .keyboard-button {
-    width: 9vw;
-    margin: 0.45vw;
+    margin: 0.25vw;
+    width: 9.5vw;
     height: 15vw;
   }
   .keyboard-button.yellow {
     width: 9.5vw;
-    margin: 0.45vw;
+    margin: 0.25vw;
     height: 15vw;  }
   .keyboard-button.green {
+    margin: 0.25vw;
     width: 9.5vw;
-    margin: 0.45vw;
     height: 15vw;  }
   .keyboard-button.grey {
+    margin: 0.25vw;
     width: 9.5vw;
-    margin: 0.45vw;
     height: 15vw;  }
   .keyboard-button.enter_delete {
+    margin: 0.25vw;
     width: 13.6vw;
-    margin: 0.45vw;
     height: 15vw;
   }
   #keyboard {
@@ -421,21 +419,7 @@ font-weight: 600;
     align-items: center;
     justify-content: center;
   }
-  .keyboard-button {
-    margin: 0.45vw;
-  }
-  .keyboard-button.yellow {
-    margin: 0.45vw;
-  }
-  .keyboard-button.green {
-    margin: 0.45vw;
-  }
-  .keyboard-button.grey {
-    margin: 0.45vw;
-  }
-  .keyboard-button.enter_delete {
-    margin: 0.45vw;
-  }
+
 }
 
 @media (max-width: 400px) {
@@ -446,21 +430,7 @@ font-weight: 600;
     align-items: center;
     justify-content: center;
   }
-  .keyboard-button {
-    margin: 0.45vw;
-  }
-  .keyboard-button.yellow {
-    margin: 0.45vw;
-  }
-  .keyboard-button.green {
-    margin: 0.45vw;
-  }
-  .keyboard-button.grey {
-    margin: 0.45vw;
-  }
-  .keyboard-button.enter_delete {
-    margin: 0.45vw;
-  }
+
 }
 
 
@@ -472,19 +442,5 @@ font-weight: 600;
     align-items: center;
     justify-content: center;
   }
-  .keyboard-button {
-    margin: 0.45vw;
-  }
-  .keyboard-button.yellow {
-    margin: 0.45vw;
-  }
-  .keyboard-button.green {
-    margin: 0.45vw;
-  }
-  .keyboard-button.grey {
-    margin: 0.45vw;
-  }
-  .keyboard-button.enter_delete {
-    margin: 0.45vw;
-  }
+
 }

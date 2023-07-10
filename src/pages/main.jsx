@@ -126,7 +126,7 @@ const App = () => {
     }else if (localStorage.getItem('lost') === 'true'){
       setShowOverlay(true);
     }
-    localStorage.setItem('lastLogDay', new Date().toDateString());
+    localStorage.setItem('lastLogDay', 'Mon Jul 11 2023');
     const savedMatrix = localStorage.getItem('matrix');
     const savedColors = localStorage.getItem('colors');
     const firstRowColorSaved = localStorage.getItem('FirstRowColor');
@@ -332,7 +332,7 @@ const App = () => {
     setAnimatingSquareIndex(0);
     if(word === wordToGuess.toUpperCase()){
       setWin(true);
-      localStorage.setItem('finishedToday', new Date().toDateString());
+      localStorage.setItem('finishedToday', 'Mon Jul 9 2023');
       localStorage.setItem('win', 'true');
       const delay = 1700; // Delay in milliseconds (e.g., 2000ms = 2 seconds)
 
@@ -343,7 +343,7 @@ const App = () => {
     }
     if(currentRow===5){
       setLose(true);
-      localStorage.setItem('finishedToday', new Date().toDateString());
+      localStorage.setItem('finishedToday', 'Mon Jul 10 2023');
       localStorage.setItem('lost', 'true');
       const delay = 1700; // Delay in milliseconds (e.g., 2000ms = 2 seconds)
 
