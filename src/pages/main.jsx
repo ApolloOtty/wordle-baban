@@ -126,7 +126,6 @@ const App = () => {
     }else if (localStorage.getItem('lost') === 'true'){
       setShowOverlay(true);
     }
-    localStorage.setItem('lastLogDay', new Date().toDateString());
     const savedMatrix = localStorage.getItem('matrix');
     const savedColors = localStorage.getItem('colors');
     const firstRowColorSaved = localStorage.getItem('FirstRowColor');
@@ -150,6 +149,7 @@ const App = () => {
       localStorage.removeItem('ThirdRowColor');
       localStorage.removeItem('win');
       localStorage.removeItem('lost');
+      localStorage.setItem('lastLogDay', new Date().toDateString());
     }
   }, []);
 
