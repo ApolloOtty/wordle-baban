@@ -191,8 +191,8 @@ font-weight: 600;
   .keyboard-button {
     width: 2.5vw;
     background-color: #475569;
-    margin: 0.05vw;
-    height: 4vw;
+    margin: 0.2vw;
+    height: 5vw;
     border-radius: 6px;
     border: #000;
     color: white;

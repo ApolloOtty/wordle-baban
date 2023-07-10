@@ -30,6 +30,8 @@ const App = () => {
   const [thirdRowColor, setThirdRowColor] = useState(Array(thirdRow.length).fill(''));
 
 
+
+
   const WORD_LENGTH = 5;
 
   const [modifiedRowIndex, setModifiedRowIndex] = useState(-1);
@@ -93,6 +95,40 @@ const App = () => {
     }
   };
 
+
+  const hasPlayerPlayedToday = () => {
+    const lastPlayDate = localStorage.getItem('lastPlayDate');
+    if (lastPlayDate) {
+      const today = new Date().toDateString();
+      return lastPlayDate === today;
+    }
+    return false;
+  };
+
+
+ 
+  useEffect(() => {
+    if(hasPlayerPlayedToday()){
+    const savedMatrix = localStorage.getItem('matrix');
+    const savedColors = localStorage.getItem('colors');
+    const firstRowColorSaved = localStorage.getItem('FirstRowColor');
+    const secondRowColorSaved = localStorage.getItem('SecondRowColor');
+    const thirdRowColorSaved = localStorage.getItem('ThirdRowColor');
+
+    if (savedMatrix && colors) {
+      setMatrix(JSON.parse(savedMatrix));
+      setColors(JSON.parse(savedColors));
+      setFirstRowColor(JSON.parse(firstRowColorSaved))
+      setSecondRowColor(JSON.parse(secondRowColorSaved))
+      setThirdRowColor(JSON.parse(thirdRowColorSaved))
+    }
+  }else{
+    localStorage.removeItem('matrix');
+    localStorage.removeItem('colors');
+  }
+  }, [hasPlayerPlayedToday]);
+
+
   const[numarare, setNumarare]=useState(false);
 
   const handleCopy = () => {
@@ -110,6 +146,7 @@ const App = () => {
   
   
   const handleLetterClick = (letter) => {
+    if (!hasPlayerPlayedToday()){
     if (!Win && !Lose) {
 
       if(c<5 && letter==="Enter"){
@@ -162,7 +199,7 @@ const App = () => {
           setZoomedColumnIndex(null); // Reset the zoomedColumnIndex if it's not needed
         }
       }
-    }
+    }}
   };
   
   
@@ -233,6 +270,14 @@ const App = () => {
     setSecondRowColor(updatedSecondRowColor);
     setThirdRowColor(updatedThirdRowColor);
   
+    localStorage.setItem('FirstRowColor', JSON.stringify(updatedFirstRowColor));
+    localStorage.setItem('SecondRowColor', JSON.stringify(updatedSecondRowColor));
+    localStorage.setItem('ThirdRowColor', JSON.stringify(updatedThirdRowColor));
+
+
+    localStorage.setItem('matrix', JSON.stringify(matrix));
+    localStorage.setItem('colors', JSON.stringify(colors));
+
     return colors;
   }
   
@@ -252,7 +297,7 @@ const App = () => {
         colorsCopy[currentRow] = [];
       }
       colorsCopy[currentRow][index] = computedColors[index];
-  
+      localStorage.setItem('colors', JSON.stringify(colorsCopy));
       setMatrix(updatedMatrix);
       setColors(colorsCopy);
   
@@ -266,6 +311,7 @@ const App = () => {
     setAnimatingSquareIndex(0);
     if(word === wordToGuess.toUpperCase()){
       setWin(true);
+      localStorage.setItem('lastPlayDate', new Date().toDateString());
       const delay = 1700; // Delay in milliseconds (e.g., 2000ms = 2 seconds)
 
     const timer = setTimeout(() => {
@@ -275,6 +321,7 @@ const App = () => {
     }
     if(currentRow===5){
       setLose(true);
+      localStorage.setItem('lastPlayDate', new Date().toDateString());
       const delay = 1700; // Delay in milliseconds (e.g., 2000ms = 2 seconds)
 
     const timer = setTimeout(() => {
