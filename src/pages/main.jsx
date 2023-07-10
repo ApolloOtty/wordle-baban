@@ -63,6 +63,9 @@ const App = () => {
 
   const [showOverlay, setShowOverlay] = useState(false);
 
+
+
+
   const handleClose = () => {
     setShowOverlay(false);
   };
@@ -118,6 +121,11 @@ const App = () => {
   const [currentColumn, setCurrentColumn] = useState(0);
  
   useEffect(() => {
+    if(localStorage.getItem('win') === 'true'){
+      setShowOverlay(true);
+    }else if (localStorage.getItem('lost') === 'true'){
+      setShowOverlay(true);
+    }
     localStorage.setItem('lastLogDay', new Date().toDateString());
     const savedMatrix = localStorage.getItem('matrix');
     const savedColors = localStorage.getItem('colors');
@@ -140,6 +148,8 @@ const App = () => {
       localStorage.removeItem('FirstRowColor');
       localStorage.removeItem('SecondRowColor');
       localStorage.removeItem('ThirdRowColor');
+      localStorage.removeItem('win');
+      localStorage.removeItem('lost');
     }
   }, []);
 
@@ -323,6 +333,7 @@ const App = () => {
     if(word === wordToGuess.toUpperCase()){
       setWin(true);
       localStorage.setItem('finishedToday', new Date().toDateString());
+      localStorage.setItem('win', 'true');
       const delay = 1700; // Delay in milliseconds (e.g., 2000ms = 2 seconds)
 
     const timer = setTimeout(() => {
@@ -333,6 +344,7 @@ const App = () => {
     if(currentRow===5){
       setLose(true);
       localStorage.setItem('finishedToday', new Date().toDateString());
+      localStorage.setItem('lost', 'true');
       const delay = 1700; // Delay in milliseconds (e.g., 2000ms = 2 seconds)
 
     const timer = setTimeout(() => {
@@ -390,13 +402,19 @@ const App = () => {
        Noa
       </div>
       
-      {showOverlay && (
-        <div className={`overlay ${showOverlay ? 'show' : ''}`}>
-          <button className="close-button" onClick={handleClose}>
-            Close
-          </button>
-          <h2>Wordle baban</h2>
-          {colors.map((row, rowIndex) => (
+      {showOverlay && localStorage.getItem('win') ? (
+    <div className={`overlay ${showOverlay ? 'show' : ''}`}>
+      <button className="close-button" onClick={handleClose}>
+        Close
+      </button>
+      <h2>Wordle baban</h2>
+      {Lose && (
+        <>
+          <h3 className='pierd'>Cuvantul era: {word}</h3>
+          <h3 className='pierd'>Atat s-a putut.</h3>
+        </>
+      )}
+      {colors.map((row, rowIndex) => (
         <div key={rowIndex}>
           {row.map((color, columnIndex) => (
             <span key={columnIndex}>{renderEmoji(color)}</span>
@@ -404,12 +422,15 @@ const App = () => {
         </div>
       ))}
 
-      <button className='buton_copy' onClick={handleCopy}>Copiaza draga copiaza sa trimiti pe grup (asta e un buton in caz ca nu ti-ai dat seama)</button>
+      <button className='buton_copy' onClick={handleCopy}>
+        Copiaza draga copiaza sa trimiti pe grup (asta e un buton in caz ca nu ti-ai dat seama)
+      </button>
       <textarea ref={emojiRef} style={{ position: 'absolute', top: -9999, left: -9999 }} />
-        </div>
-      )}
+    </div>
+  ) : null}
 
-{showOverlay && (
+
+{showOverlay && localStorage.getItem('lost') ? (
         <div className={`overlay ${showOverlay ? 'show' : ''}`}>
           <button className="close-button" onClick={handleClose}>
             Close
@@ -432,8 +453,8 @@ const App = () => {
       <button className='buton_copy' onClick={handleCopy}>Copiaza draga copiaza sa trimiti pe grup (asta e un buton in caz ca nu ti-ai dat seama)</button>
       <textarea ref={emojiRef} style={{ position: 'absolute', top: -9999, left: -9999 }} />
         </div>
-      )}
-
+      
+      ) : null}
 
       <div className="content">
        
