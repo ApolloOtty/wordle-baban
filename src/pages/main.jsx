@@ -105,10 +105,10 @@ const App = () => {
     return false;
   };
 
-
+  const [currentRow, setCurrentRow] = useState(0);
+  const [currentColumn, setCurrentColumn] = useState(0);
  
   useEffect(() => {
-    if(hasPlayerPlayedToday()){
     const savedMatrix = localStorage.getItem('matrix');
     const savedColors = localStorage.getItem('colors');
     const firstRowColorSaved = localStorage.getItem('FirstRowColor');
@@ -121,13 +121,17 @@ const App = () => {
       setFirstRowColor(JSON.parse(firstRowColorSaved))
       setSecondRowColor(JSON.parse(secondRowColorSaved))
       setThirdRowColor(JSON.parse(thirdRowColorSaved))
+      setCurrentColumn(0);
+      setCurrentRow(parseInt(localStorage.getItem('row'))+1);
     }
-  }else{
-    localStorage.removeItem('matrix');
-    localStorage.removeItem('colors');
-  }
-  }, [hasPlayerPlayedToday]);
-
+    if(!hasPlayerPlayedToday()){
+      localStorage.removeItem('matrix');
+      localStorage.removeItem('colors');
+      localStorage.removeItem('FirstRowColor');
+      localStorage.removeItem('SecondRowColor');
+      localStorage.removeItem('ThirdRowColor');
+    }
+  }, []);
 
   const[numarare, setNumarare]=useState(false);
 
@@ -141,8 +145,7 @@ const App = () => {
   const [keyboardButtonPressed, setKeyboardButtonPressed] = useState(false);
   const [zoomedRowIndex, setZoomedRowIndex] = useState(null);
   const [zoomedColumnIndex, setZoomedColumnIndex] = useState(null);
-  const [currentRow, setCurrentRow] = useState(0);
-  const [currentColumn, setCurrentColumn] = useState(0);
+
   
   
   const handleLetterClick = (letter) => {
@@ -274,6 +277,8 @@ const App = () => {
     localStorage.setItem('SecondRowColor', JSON.stringify(updatedSecondRowColor));
     localStorage.setItem('ThirdRowColor', JSON.stringify(updatedThirdRowColor));
 
+    localStorage.setItem('column', currentColumn);
+    localStorage.setItem('row', currentRow);
 
     localStorage.setItem('matrix', JSON.stringify(matrix));
     localStorage.setItem('colors', JSON.stringify(colors));
