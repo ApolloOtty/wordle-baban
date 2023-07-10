@@ -203,20 +203,20 @@ font-weight: 600;
   
   .keyboard-button {
     margin: 0.25vw;
-    width: 9.5vw;
+    width: 9vw;
     height: 15vw;
   }
   .keyboard-button.yellow {
-    width: 9.5vw;
+    width: 9vw;
     margin: 0.25vw;
     height: 15vw;  }
   .keyboard-button.green {
     margin: 0.25vw;
-    width: 9.5vw;
+    width: 9vw;
     height: 15vw;  }
   .keyboard-button.grey {
     margin: 0.25vw;
-    width: 9.5vw;
+    width: 9vw;
     height: 15vw;  }
   .keyboard-button.enter_delete {
     margin: 0.25vw;
