@@ -109,12 +109,16 @@ const App = () => {
 
 
   const hasPlayerLoggedToday = () => {
+    if(!localStorage.getItem('lastLogDay')){
+      const lastPlayDate = '0';
+    }else{
     const lastPlayDate = localStorage.getItem('lastLogDay');
     if (lastPlayDate) {
       const today = new Date().toDateString();
       return lastPlayDate === today;
     }
     return false;
+  }
   };
 
   const [currentRow, setCurrentRow] = useState(0);
@@ -142,13 +146,7 @@ const App = () => {
       setCurrentRow(parseInt(localStorage.getItem('row'))+1);
     }
     if(!hasPlayerLoggedToday()){
-      localStorage.removeItem('matrix');
-      localStorage.removeItem('colors');
-      localStorage.removeItem('FirstRowColor');
-      localStorage.removeItem('SecondRowColor');
-      localStorage.removeItem('ThirdRowColor');
-      localStorage.removeItem('win');
-      localStorage.removeItem('lost');
+      localStorage.clear();
       localStorage.setItem('lastLogDay', new Date().toDateString());
     }
   }, []);
