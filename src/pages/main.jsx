@@ -11,7 +11,6 @@ const App = () => {
 
 
   const wordsArray = wordList.split(" ");
-  console.log(wordsArray);
 
 
 
@@ -177,9 +176,7 @@ const App = () => {
         setWordToGuess((prevWord) => prevWord.slice(0, -1));
         if (currentColumn > 0) setCurrentColumn(currentColumn - 1);
       } else if (letter === 'Enter' && c === 5) {
-        console.log(wordToGuess); // Log the word in the console
         if (word === wordToGuess.toUpperCase()) {
-          console.log("cucu");
         }
         // Check if the word exists in the text file
         const wordToCheck = wordToGuess.toLowerCase();
@@ -191,7 +188,6 @@ const App = () => {
           const updatedMatrix = [...matrix];
           setMatrix(updatedMatrix);
           checkWord();
-          console.log(wordToGuess); // Log the word in the console
           setWordToGuess(''); // Reset the word variable
           setErrorWordNotExist(false); // Reset error state since the word exists
         } else {
@@ -205,7 +201,6 @@ const App = () => {
           updatedMatrix[currentRow][currentColumn] = letter;
           setMatrix(updatedMatrix);
           setCurrentColumn(currentColumn + 1);
-          console.log(c);
           setZoomedRowIndex(currentRow); // Set the zoomedRowIndex to the current row
           setZoomedColumnIndex(currentColumn);
         } else {
