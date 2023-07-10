@@ -14,7 +14,7 @@ const App = () => {
 
 
 
-  const [word, setWord] = useState('GIBON');
+  const [word, setWord] = useState('ICTER');
 
 
   const [selectedLetters, setSelectedLetters] = useState([]);
