@@ -96,8 +96,18 @@ const App = () => {
   };
 
 
-  const hasPlayerPlayedToday = () => {
-    const lastPlayDate = localStorage.getItem('lastPlayDate');
+  const hasPlayerFinishedToday = () => {
+    const lastPlayDate = localStorage.getItem('finishedToday');
+    if (lastPlayDate) {
+      const today = new Date().toDateString();
+      return lastPlayDate === today;
+    }
+    return false;
+  };
+
+
+  const hasPlayerLoggedToday = () => {
+    const lastPlayDate = localStorage.getItem('lastLogDay');
     if (lastPlayDate) {
       const today = new Date().toDateString();
       return lastPlayDate === today;
@@ -109,7 +119,7 @@ const App = () => {
   const [currentColumn, setCurrentColumn] = useState(0);
  
   useEffect(() => {
-    localStorage.setItem('lastPlayDate', new Date().toDateString());
+    localStorage.setItem('lastLogDay', new Date().toDateString());
     const savedMatrix = localStorage.getItem('matrix');
     const savedColors = localStorage.getItem('colors');
     const firstRowColorSaved = localStorage.getItem('FirstRowColor');
@@ -125,7 +135,7 @@ const App = () => {
       setCurrentColumn(0);
       setCurrentRow(parseInt(localStorage.getItem('row'))+1);
     }
-    if(!hasPlayerPlayedToday()){
+    if(!hasPlayerLoggedToday()){
       localStorage.removeItem('matrix');
       localStorage.removeItem('colors');
       localStorage.removeItem('FirstRowColor');
@@ -150,7 +160,7 @@ const App = () => {
   
   
   const handleLetterClick = (letter) => {
-    if (!hasPlayerPlayedToday()){
+    if (!hasPlayerFinishedToday()){
     if (!Win && !Lose) {
 
       if(c<5 && letter==="Enter"){
@@ -317,7 +327,7 @@ const App = () => {
     setAnimatingSquareIndex(0);
     if(word === wordToGuess.toUpperCase()){
       setWin(true);
-      localStorage.setItem('lastPlayDate', new Date().toDateString());
+      localStorage.setItem('finishedToday', new Date().toDateString());
       const delay = 1700; // Delay in milliseconds (e.g., 2000ms = 2 seconds)
 
     const timer = setTimeout(() => {
@@ -327,7 +337,7 @@ const App = () => {
     }
     if(currentRow===5){
       setLose(true);
-      localStorage.setItem('lastPlayDate', new Date().toDateString());
+      localStorage.setItem('finishedToday', new Date().toDateString());
       const delay = 1700; // Delay in milliseconds (e.g., 2000ms = 2 seconds)
 
     const timer = setTimeout(() => {
