@@ -181,13 +181,8 @@ font-weight: 600;
     margin-top: 10vh; /* Set a height to the container to cover the entire viewport */
   }
   .keyboard-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end; /* Align to the bottom of the container */
-    height: 40vh; /* Set a height to the container to cover the entire viewport */
   }
-  
+
   .keyboard-button {
     width: 2.5vw;
     background-color: #475569;
@@ -200,7 +195,7 @@ font-weight: 600;
   }
   
   .keyboard-button {
-    width: 9.5vw;
+    width: 9vw;
     height: 15vw;
   }
   .keyboard-button.yellow {

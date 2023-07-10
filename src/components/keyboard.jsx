@@ -4,7 +4,7 @@ import './keyboard.css';
 const Keyboard = ({ alphabet, onClick, color }) => {
 
   return (
-    <div>
+    <div className='keyboard-container'>
     {alphabet.map((letter, index) => (
       <button
         key={index}
