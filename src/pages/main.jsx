@@ -148,6 +148,7 @@ const App = () => {
     if(!hasPlayerLoggedToday()){
       localStorage.clear();
       localStorage.setItem('lastLogDay', new Date().toDateString());
+      window.location.reload(true)
     }
   }, []);
 
