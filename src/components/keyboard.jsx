@@ -28,8 +28,8 @@ const DarkModeButtons = ({ alphabet, onClick, color }) => {
         <button
         key={index}
         className={`keyboard-button dark ${
-          color && color[index] === 'correct' ? 'green-dark' :
-          color && color[index] === 'exists' ? 'yellow-dark' :
+          color && color[index] === 'correct' ? 'green' :
+          color && color[index] === 'exists' ? 'yellow' :
           color && color[index] === 'grey' ? 'grey-dark' : ''
         } ${letter === 'Enter' || letter === 'Delete' ? 'enter_delete' : ''}`}
         onClick={() => onClick(letter)}
