@@ -96,6 +96,16 @@ const App = () => {
         return '';
     }
   };
+  const [mode, setMode] = useState();
+
+  useEffect(() => {
+    window.matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', event => {
+        const colorScheme = event.matches ? "dark" : "light";
+        console.log(colorScheme); // "dark" or "light"
+        setMode(colorScheme);
+      });
+  }, []);
 
 
   const hasPlayerFinishedToday = () => {

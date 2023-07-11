@@ -9,7 +9,7 @@ body{
 
 .keyboard-button {
   width: 2.5vw;
-  background-color: #475569 !important;
+  background-color: #475569;
   margin: 0.2vw;
   height: 5vw;
   border-radius: 6px;
@@ -47,7 +47,7 @@ font-weight: 600;
 
 .keyboard-button.grey{
 width: 2.5vw;
-background-color: #1E293B !important;
+background-color: #1E293B;
 transition: background-color 0s 1.5s;
 margin: 0.2vw;
 height: 3.5vw;
@@ -55,6 +55,12 @@ border-radius: 6px;
 border: #000;
 color: white;
 font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .keyboard-button.grey {
+    background-color: #1E293B;
+  }
 }
 
 .keyboard-button.enter_delete{
