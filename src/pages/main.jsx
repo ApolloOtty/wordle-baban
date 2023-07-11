@@ -116,9 +116,9 @@ const App = () => {
     if (lastPlayDate) {
       const today = new Date().toDateString();
       return lastPlayDate === today;
-    }
+    }}
     return false;
-  }
+  
   };
 
   const [currentRow, setCurrentRow] = useState(0);
