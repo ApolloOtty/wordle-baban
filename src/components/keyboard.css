@@ -18,6 +18,15 @@ body{
   font-weight: 600;
 }
 
+.keyboard-button.dark {
+  background-color: #a0a2a7;
+}
+
+
+.keyboard-button.dark.enter_delete{
+  background-color: #a0a2a7;
+}
+
 .keyboard-button.green{
   width: 2.5vw;
   background-color: #22C55E;
@@ -40,14 +49,27 @@ color: white;
 font-weight: 600;
 }
 
+.keyboard-button.dark.yellow-dark {
+  background-color: #EAB308;
+}
+
+
 .pierd{
   margin-bottom: 2%;
   margin-top: 1%;
 }
 
+#lightdarkmode{
+  border-radius: 4px;
+  color: white;
+  background-color: #1E293B;
+  border: 0px;
+  height: auto;
+}
+
 .keyboard-button.grey{
 width: 2.5vw;
-background-color: #1E293B;
+background-color: #182130;
 transition: background-color 0s 1.5s;
 margin: 0.2vw;
 height: 3.5vw;
@@ -56,6 +78,10 @@ border: #000;
 color: white;
 font-weight: 600;
 }
+
+.keyboard-button.grey-dark{
+  background-color: #0b0f16;
+  }
 
 @media (prefers-color-scheme: dark) {
   .keyboard-button.grey {

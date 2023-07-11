@@ -404,6 +404,13 @@ const App = () => {
     }
   }, [currentRow, animationIndex]);
 
+  const [lightdark, setLightDark] = useState(false);
+
+const handleThemeChange = () => {
+  setLightDark((prevState) => !prevState);
+};
+
+
   return (
     <div>
     <div className={`error-message ${errorWordNotExist ? 'show' : ''}`}>
@@ -497,19 +504,26 @@ const App = () => {
     </div>
     <div className='keyboard-container'>
       <div id="keyboard" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <Keyboard alphabet={firstRow} onClick={handleLetterClick} color={firstRowColor}/>
+        <Keyboard alphabet={firstRow} onClick={handleLetterClick} color={firstRowColor} lightdarkmode={lightdark}/>
       </div>
       <div id="keyboard" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <Keyboard alphabet={secondRow} onClick={handleLetterClick} color={secondRowColor}/>
+        <Keyboard alphabet={secondRow} onClick={handleLetterClick} color={secondRowColor} lightdarkmode={lightdark}/>
       </div>
 
       <div id="keyboard" style={{ display: 'flex', flexDirection: '', alignItems: 'center', justifyContent: 'center' }}>
         <Keyboard alphabet={['Enter']} onClick={handleLetterClick} className=".keyboard-button.enter_delete" />
-        <Keyboard alphabet={thirdRow} onClick={handleLetterClick} color={thirdRowColor}/>
+        <Keyboard alphabet={thirdRow} onClick={handleLetterClick} color={thirdRowColor} lightdarkmode={lightdark}/>
         <Keyboard alphabet={['Delete']} onClick={handleLetterClick} />
       </div>
       <p>{selectedLetters.join('')}</p>
+      <div  style={{ display: 'flex',flexDirection: '', alignItems: 'center', justifyContent: 'center' }}>
+      <button id='lightdarkmode' onClick={handleThemeChange}>
+        Pentru prostii care nu vad bine
+      </button>
+        </div>
+      
       </div>
+      
     </div>
   );
 };
