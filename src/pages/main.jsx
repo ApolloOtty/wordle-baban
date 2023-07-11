@@ -414,11 +414,11 @@ const handleThemeChange = () => {
   return (
     <div>
     <div className={`error-message ${errorWordNotExist ? 'show' : ''}`}>
-      Nu exista cuvantu' ala ba tumefiatule =)))))))))
+      Nu există cuvântu' ăla bă tumefiatule =)))))))))
         </div>
 
         <div className={`error-message ${numarare ? 'show' : ''}`}>
-          Esti nesimtit? Alea nu-s 5 litere =))))))
+          Ești nesimțit? Alea nu-s 5 litere =))))))
         </div>
 
       <div className={`win ${Win ? 'show' : ''}`}>
@@ -446,7 +446,7 @@ const handleThemeChange = () => {
       ))}
 
       <button className='buton_copy' onClick={handleCopy}>
-        Copiaza draga copiaza sa trimiti pe grup (asta e un buton in caz ca nu ti-ai dat seama)
+        Copiază dragă copiază să trimiți pe grup (ăsta e un buton in caz ca nu ți-ai dat seama)
       </button>
       <textarea ref={emojiRef} style={{ position: 'absolute', top: -9999, left: -9999 }} />
     </div>
@@ -518,7 +518,7 @@ const handleThemeChange = () => {
       <p>{selectedLetters.join('')}</p>
       <div  style={{ display: 'flex',flexDirection: '', alignItems: 'center', justifyContent: 'center' }}>
       <button id='lightdarkmode' onClick={handleThemeChange}>
-        Pentru prostii care nu vad bine
+        Pentru proștii care nu văd bine
       </button>
         </div>
       
