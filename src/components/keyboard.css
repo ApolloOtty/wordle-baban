@@ -9,7 +9,7 @@ body{
 
 .keyboard-button {
   width: 2.5vw;
-  background-color: #475569;
+  background-color: #5d6f88;
   margin: 0.2vw;
   height: 5vw;
   border-radius: 6px;
@@ -47,7 +47,7 @@ font-weight: 600;
 
 .keyboard-button.grey{
 width: 2.5vw;
-background-color: #243046;
+background-color: #1e283a;
 transition: background-color 0s 1.5s;
 margin: 0.2vw;
 height: 3.5vw;
@@ -192,7 +192,6 @@ font-weight: 600;
 
   .keyboard-button {
     width: 2.5vw;
-    background-color: #475569;
     margin: 0.2vw;
     height: 5vw;
     border-radius: 6px;
