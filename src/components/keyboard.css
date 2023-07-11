@@ -19,7 +19,7 @@ body{
 }
 
 .keyboard-button.dark {
-  background-color: #f3f7fd;
+  background-color: #cccfd3;
 }
 
 
@@ -80,7 +80,7 @@ font-weight: 600;
 }
 
 .keyboard-button.grey-dark{
-  background-color: #0b0f16;
+  background-color: #010c25;
   }
 
 @media (prefers-color-scheme: dark) {
