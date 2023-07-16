@@ -18,7 +18,7 @@ const App = () => {
 
 
 
-  const [word, setWord] = useState('ZOAIE');
+  const [word, setWord] = useState('MILOG');
 
 
   const [selectedLetters, setSelectedLetters] = useState([]);
@@ -172,7 +172,7 @@ const App = () => {
   const handleCopy = () => {
     const emojis = colors.map((row) => row.map((color) => renderEmoji(color)).join('')).join('\n');
     if (emojis) {
-      navigator.clipboard.writeText("Wordle Baban" + '\n' + emojis);
+      navigator.clipboard.writeText("Wordle Baban" + '\n' + emojis + '\n' + '\n' +  "https://apollootty.github.io/wordle-baban");
     }
   };
 
@@ -459,7 +459,7 @@ const handleThemeChange = () => {
 };
 
   return (
-    <div>
+<div>
     <div className={`error-message ${errorWordNotExist ? 'show' : ''}`}>
       Nu există cuvântu' ăla bă tumefiatule =)))))))))
         </div>
@@ -473,11 +473,13 @@ const handleThemeChange = () => {
       </div>
       
       {showOverlay && localStorage.getItem('win') ? (
+        <><div className="blur-background"></div>
     <div className={`overlay ${showOverlay ? 'show' : ''}`}>
       <button className="close-button" onClick={handleClose}>
-        Close
+        X
       </button>
-      <h2>Wordle baban</h2>
+      <h2>Bravo 🙄</h2>
+      <h3>Macar atat sa poti si tu 😒</h3>
       {Lose && (
         <>
           <h3 className='pierd'>Cuvantul era: {word}</h3>
@@ -497,15 +499,15 @@ const handleThemeChange = () => {
       </button>
       <textarea ref={emojiRef} style={{ position: 'absolute', top: -9999, left: -9999 }} />
     </div>
+    </>
   ) : null}
 
-
 {showOverlay && localStorage.getItem('lost') ? (
+          <><div className="blur-background"></div>
         <div className={`overlay ${showOverlay ? 'show' : ''}`}>
           <button className="close-button" onClick={handleClose}>
             Close
           </button>
-          <h2>Wordle baban</h2>
             {Lose && (
               <>
                 <h3 className='pierd'>Cuvantul era: {word}</h3>
@@ -519,11 +521,10 @@ const handleThemeChange = () => {
           ))}
         </div>
       ))}
-
       <button className='buton_copy' onClick={handleCopy}>Copiaza draga copiaza sa trimiti pe grup (asta e un buton in caz ca nu ti-ai dat seama)</button>
       <textarea ref={emojiRef} style={{ position: 'absolute', top: -9999, left: -9999 }} />
         </div>
-      
+        </>
       ) : null}
 
       <div className="content">
