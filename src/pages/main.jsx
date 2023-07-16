@@ -170,8 +170,11 @@ const App = () => {
   const[numarare, setNumarare]=useState(false);
 
   const handleCopy = () => {
-    const emojis = colors.map((row) => row.map((color) => renderEmoji(color)).join('')).join('\n');
-    if (emojis) {
+    const emojis = colors
+    .filter((row) => row.some((color) => color !== ''))
+    .map((row) => row.map((color) => renderEmoji(color)).join(''))
+    .join('\n');
+      if (emojis) {
       navigator.clipboard.writeText("Wordle Baban" + '\n' + emojis + '\n' + '\n' +  "https://apollootty.github.io/wordle-baban");
     }
   };

@@ -216,6 +216,11 @@ font-weight: 600;
 }
 
 
+.buton_copy:active{
+  background-color: rgb(86, 97, 253); /* Change the color when pressed */
+}
+
+
 @media (max-width: 860px) {
   .overlay{
     width: 80%;
